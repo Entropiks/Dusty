@@ -3,6 +3,16 @@
 // Dynamically adding title tags - requires wp_head in header.php
 add_theme_support('title-tag');
 
+function dusty_menus() {
+  $menu_locations = array(
+    'primary' => "Top Primary Menu",
+    'footer' => "Footer Menu"
+  );
+
+  register_nav_menus($menu_locations);
+}
+add_action('init', 'dusty_menus');
+
 // Load all styles function
 function dusty_styles() {
 

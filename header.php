@@ -14,6 +14,16 @@
   <body>
     <!-- Navbar -->
     <header>
+      <?php
+        wp_nav_menu(
+          array(
+            'menu' => 'primary',
+            'container' => '',
+            'theme_location' => 'primary',
+            'items_wrap' => '<div id="" class="navbar-nav"></div>'
+          )
+        );
+      ?>
       <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="#">DUSTY</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +40,7 @@
 
       <!-- Banner section -->
       <div class="banner background_banner">
-        <h1 class="banner_title">Dusty - A WordPress Theme</h1>
+        <h1 class="banner_title"><?php the_title(); ?></h1>
         <p class="banner_description">A demonstration of WP, Grid and PHP</p>
       </div>
     </header>
